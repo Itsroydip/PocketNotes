@@ -1,0 +1,58 @@
+.container{
+    height: 100%;
+    position: relative;
+}
+
+.main{
+    padding-top: 9rem;
+    margin-left: 3rem;
+    height: 100%;
+    overflow-y: scroll;  
+    
+}
+
+.heading{
+    background-color: white;
+    padding: 2.5rem 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.heading p{
+    font-size: 3.5rem;
+    font-weight: 500;
+    letter-spacing: 2%;
+    text-align: center;
+}
+
+.button button{
+    height: 6rem;
+    width: 6rem;
+    border-radius: 50%;
+    border: none;
+    color: white;
+    background-color: rgba(22, 0, 139, 1);
+    font-weight: 500;
+    font-size: 5rem;
+    cursor: pointer;
+    position: absolute;
+    bottom: 3rem;
+    right: 2rem
+}
+
+.main::-webkit-scrollbar {
+    width: 0.5rem;
+    height: 50%;
+  }
+
+.main ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px rgba(217, 217, 217, 1); 
+    border-radius: 10px;
+    background: transparent;
+  }
+   
+.main::-webkit-scrollbar-thumb {
+    background: white; 
+    border-radius: 10px;
+  }

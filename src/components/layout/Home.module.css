@@ -1,0 +1,39 @@
+.container{
+    background-color: rgba(218, 229, 245, 1);
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero{
+    height: 25rem;
+}
+
+.heading{
+    font-size: 4.5rem;
+    font-weight: 700;
+    letter-spacing: 0.02rem;
+}
+
+.subheading{
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 2.2rem;
+    letter-spacing: 0.02em;
+    color: rgba(41, 41, 41, 1);   
+}
+
+
+.text{
+    position: absolute;
+    bottom: 1rem;
+    font-size: 1.6rem;
+    font-weight: 400;
+    letter-spacing: 0.02rem;
+    color: rgba(41, 41, 41, 1);   
+    display: flex;
+    align-items: center; 
+}
