@@ -1,14 +1,15 @@
 import React from 'react'
 import styles from './GroupStrip.module.css'
+import { NavLink } from 'react-router-dom'
 
-const GroupStrip = ({name, color, initial}) => {
+const GroupStrip = ({id, name, color, initial}) => {
   return (
-    <div className={styles.container} >
+    <NavLink to={`/${id}`} className={({isActive})=> isActive ? styles.active : styles.container }>
         <div className={styles.initial} style={{backgroundColor: color}}>
             <p>{initial}</p>
         </div>
         <span className={styles.name}>{name}</span>
-    </div>
+    </NavLink>
   )
 }
 

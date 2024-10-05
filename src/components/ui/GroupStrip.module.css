@@ -4,9 +4,20 @@
     align-items: center;
     border-radius: 1.6rem;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .container:hover{
+    background-color: rgba(132, 132, 132, 0.091);
+}
+
+.active{
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    border-radius: 1.6rem;
+    cursor: pointer;
+    text-decoration: none;
     background-color: rgba(47, 47, 47, 0.17);
 }
 
@@ -33,4 +44,6 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    color: black;
 }
+

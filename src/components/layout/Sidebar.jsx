@@ -20,12 +20,14 @@ const Sidebar = () => {
         <div className={styles.main}>
             { groups.length > 0 &&
                 groups.map((group)=>{
-                    return <GroupStrip 
-                            key={group.id}
-                            name = {group.groupName}
-                            initial = {group.initial}
-                            color = {group.groupColor}
+                    return  <GroupStrip 
+                                key={group.id}
+                                id={group.id}
+                                name = {group.groupName}
+                                initial = {group.initial}
+                                color = {group.groupColor}
                             />
+                        
                 })
             }
             

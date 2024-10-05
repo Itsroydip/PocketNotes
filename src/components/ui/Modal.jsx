@@ -37,9 +37,7 @@ const Modal = ({setShowModal}) => {
             notes: []
         })
         
-        console.log(groups)
-        console.log("Group created successfully!!!");     
-      
+        console.log("Group created successfully!!!");           
     }
 
   return (
