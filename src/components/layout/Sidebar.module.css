@@ -4,15 +4,15 @@
 }
 
 .main{
-    padding-top: 9rem;
-    margin-left: 3rem;
+    padding-top: 10rem;
     height: 100%;
     overflow-y: scroll;  
     
 }
 
+
 .heading{
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     padding: 2.5rem 0;
     position: absolute;
     top: 0;

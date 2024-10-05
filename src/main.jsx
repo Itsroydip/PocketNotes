@@ -5,6 +5,7 @@ import './index.css'
 import AppLayout from './components/layout/AppLayout';
 import Home from './components/layout/Home';
 import MainSection from './components/layout/MainSection';
+import { NotesContextProvider } from './contexts/NotesContext';
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <NotesContextProvider>
+      <RouterProvider router={router} />
+    </NotesContextProvider>
   </StrictMode>,
 )

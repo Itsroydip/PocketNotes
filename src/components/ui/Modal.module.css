@@ -1,0 +1,112 @@
+.background{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(47, 47, 47, 0.75);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    height: 40vh;
+    width: 50vw;
+    border-radius: 0.6rem;
+    padding: 2rem 3.5rem;
+    background-color: white;
+    position: relative;
+}
+
+.container label{
+    font-size: 2.3rem;
+    font-weight: 400;
+    letter-spacing: 0.035rem;
+    text-align: left;
+}
+
+.heading{
+    font-size: 2.9rem;
+    font-weight: 500;
+    letter-spacing: 0.035rem;
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+.text_input{
+    display: flex;
+    justify-content: space-between;
+    margin: 1.5rem 0;
+}
+
+.text_input input{
+    border: 0.2rem solid rgba(204, 204, 204, 1);
+    border-radius: 1.4rem;
+    width: 40rem;
+    padding: 0.4rem 1.5rem;
+    font-size: 2rem;
+    color: rgb(79, 79, 79);
+    outline:none;
+    transition: 0.8s;
+}
+
+.text_input input:focus{
+    border: 0.2rem solid rgba(0, 31, 139, 1);
+}
+
+.color_input{
+    display: flex;
+    margin-top: 2.7rem;
+}
+
+.color_selector{
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-left: 3rem;
+    font-family: Arial, sans-serif;
+}
+
+.color_selector label{
+    display: inline-block;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+.color_selector input[type="radio"]{
+    display: none;
+}
+.color_selector input[type="radio"]:checked + label{
+    transform: scale(1.1);
+    box-shadow: 0 0 0 0.2rem white, 0 0 0 0.4rem #000;
+}
+#color1 + label { background-color: rgba(179, 139, 250, 1); }
+#color2 + label { background-color: rgba(255, 121, 242, 1); }
+#color3 + label { background-color: rgba(67, 230, 252, 1); }
+#color4 + label { background-color: rgba(241, 149, 118, 1); }
+#color5 + label { background-color: rgba(0, 71, 255, 1); }
+#color6 + label { background-color: rgba(102, 145, 255, 1); }
+
+.create_btn{
+    background-color: rgba(0, 31, 139, 1);
+    color: white;
+    border-radius: 1rem;
+    border: none;
+    width: 15rem;
+    font-size: 1.8rem;
+    letter-spacing: 0.035rem;
+    font-weight: 400;
+    padding: 0.5rem 3rem;
+    position: absolute;
+    bottom: 1rem;
+    right: 2rem;
+    cursor: pointer;
+}
+
+.create_btn:disabled{
+    background-color: rgba(0, 30, 139, 0.379);
+}

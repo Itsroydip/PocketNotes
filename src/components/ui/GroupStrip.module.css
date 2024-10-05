@@ -1,0 +1,36 @@
+.container{
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    border-radius: 1.6rem;
+    cursor: pointer;
+}
+
+.container:hover{
+    background-color: rgba(47, 47, 47, 0.17);
+}
+
+.initial{
+    height: 5rem;
+    width: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 50%;
+    font-weight: 500;
+    font-size: 2.2rem;
+    color: white;
+}
+
+
+.name{
+    width: 25rem;
+    font-size: 2.2rem;
+    font-weight: 500;
+    letter-spacing: 0.02rem;
+    margin-left: 2rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
