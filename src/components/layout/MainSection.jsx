@@ -1,52 +1,74 @@
 import React, {useState} from 'react'
 import styles from './MainSection.module.css'
 import { IoSendSharp } from "react-icons/io5";
+import useGlobalContext from '../../contexts/NotesContext';
+import { useParams } from 'react-router-dom';
 
 const MainSection = () => {
-  const [notes, setNotes] = useState([
-    {
-      id: 1,
-      content: "Another productive way to use this tool to begin a daily writing routine. One way is to generate a random paragraph with the intention to try to rewrite it while still keeping the original meaning. The purpose here is to just get the writing started so that when the writer goes onto their day's writing projects, words are already flowing from their fingers.",
-      timestamp: "9 Mar 2023 • 10:10 AM"
-    },
-    {
-      id: 2,
-      content: "Another productive way to use this tool to begin a daily writing routine. One way is to generate a random paragraph with the intention to try to rewrite it while still keeping the original meaning. The purpose here is to just get the writing started so that when the writer goes onto their day's writing projects, words are already flowing from their fingers.",
-      timestamp: "9 Mar 2023 • 10:10 AM"
-    },
-    // {
-    //   id: 3,
-    //   content: "Another productive way to use this tool to begin a daily writing routine. One way is to generate a random paragraph with the intention to try to rewrite it while still keeping the original meaning. The purpose here is to just get the writing started so that when the writer goes onto their day's writing projects, words are already flowing from their fingers.",
-    //   timestamp: "9 Mar 2023 • 10:10 AM"
-    // }
-  ]);
+  const { groupId } = useParams();
+  const {groups, setGroups} = useGlobalContext();
+  const [note, setNote] = useState('');
+  const metaData = groups.find(group => group.id === parseInt(groupId));
 
-  const handleSubmit = ()=>{}
+  const handleAddNote = (e)=>{
+    e.preventDefault();
+    if (note.trim() === '') return;
+
+    const currentDate = new Date();
+    const newNoteObj = {
+      id: Date.now(),
+      content: note,
+      date: currentDate.toLocaleDateString('en-US', { day: 'numeric', month: 'short', year: 'numeric' }),
+      time: currentDate.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })
+    };
+
+    const newGroups = groups.map((group) => {
+    return  group.id === parseInt(groupId)
+        ? { ...group, notes: [...group.notes, newNoteObj] }
+        : group
+    })
+
+    setGroups(newGroups);
+    localStorage.setItem('groups', JSON.stringify(newGroups));
+    setNote('');
+
+  }
+
 
   return (
     <div className={styles.container}>
       <div className={styles.header}>
-        <div className={styles.logo}>
-          <p>MN</p>
+        <div className={styles.logo} style={{background: metaData?.groupColor}}>
+          <p> {metaData?.initial} </p>
         </div>
-        <h1 className={styles.heading}>My Notes</h1>
+        <h1 className={styles.heading}> {metaData?.groupName} </h1>
       </div>
 
       <div className={styles.notesContainer}>
-          {notes.map((note) => (
-            <div key={note.id} className={styles.note}>
-              <p className={styles.noteContent}>{note.content}</p>
-              <p className={styles.noteTimestamp}>{note.timestamp}</p>
-            </div>
-          ))}
+          {
+            metaData?.notes
+            .map((note) => (
+              <div key={note.id} className={styles.note}>
+                <p className={styles.noteContent}>{note.content}</p>
+                <p className={styles.noteTimestamp}>
+                  {note.time} 
+                  <span className={styles.divider}>•</span>
+                  {note.date}
+
+                </p>
+              </div>
+            ))
+          }
       </div>
 
       <div className={styles.footer}>
-        <form onSubmit={handleSubmit} className={styles.input_container}>
+        <form onSubmit={handleAddNote} className={styles.input_container}>
             <textarea
-              // value={}
-              placeholder="Here's the sample text for sample work"
+              value={note}
+              placeholder="Enter your text here..........."
               className={styles.textbox}
+              onChange={(e)=> setNote(e.target.value)}
+              onKeyDown={(e)=> {if(e.key==='Enter') handleAddNote(e)} }
             />
             <button type="submit" className={styles.send_button}>
             <IoSendSharp className={styles.send_icon}/>

@@ -11,6 +11,6 @@ const GroupStrip = ({id, name, color, initial}) => {
         <span className={styles.name}>{name}</span>
     </NavLink>
   )
-}
+} 
 
 export default GroupStrip

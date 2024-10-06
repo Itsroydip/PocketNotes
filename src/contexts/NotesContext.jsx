@@ -19,7 +19,7 @@ const NotesContextProvider = ({children})=>{
     };
 
     return(
-        <NotesContext.Provider value={{groups, addGroups}}>
+        <NotesContext.Provider value={{groups, setGroups, addGroups}}>
             {children}
         </NotesContext.Provider>
     )

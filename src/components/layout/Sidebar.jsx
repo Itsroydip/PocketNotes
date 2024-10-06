@@ -8,6 +8,7 @@ const Sidebar = () => {
     const {groups} = useGlobalContext();
     const [showModal, setShowModal] = useState(false);
 
+
     const handleCreate = ()=>{
         setShowModal(true);
     }

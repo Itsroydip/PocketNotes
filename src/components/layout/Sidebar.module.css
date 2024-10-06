@@ -4,23 +4,19 @@
 }
 
 .main{
-    padding-top: 10rem;
-    height: 100%;
-    overflow-y: scroll;  
-    
+    height: 85%;
+    overflow-y: auto;      
 }
-
 
 .heading{
     background-color: rgb(255, 255, 255);
     padding: 2.5rem 0;
-    position: absolute;
-    top: 0;
     width: 100%;
+    height: 15%;
 }
 
 .heading p{
-    font-size: 3.5rem;
+    font-size: 3rem;
     font-weight: 500;
     letter-spacing: 2%;
     text-align: center;
@@ -43,16 +39,16 @@
 
 .main::-webkit-scrollbar {
     width: 0.5rem;
-    height: 50%;
-  }
-
-.main ::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 5px rgba(217, 217, 217, 1); 
-    border-radius: 10px;
-    background: transparent;
-  }
-   
+}
+.main::-webkit-scrollbar-track {
+    background-color: rgba(217, 217, 217, 1);
+    border-radius: 6px;
+}
 .main::-webkit-scrollbar-thumb {
-    background: white; 
-    border-radius: 10px;
-  }
+    background-color: white; 
+    border-radius: 6px;
+    border: 0.15rem solid rgba(217, 217, 217, 1);
+}
+.main::-webkit-scrollbar-thumb:hover {
+    background-color: #ffffffdd; 
+}

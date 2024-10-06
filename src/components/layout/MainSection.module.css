@@ -63,6 +63,9 @@
 .noteTimestamp{
     text-align: right;
     font-weight: 500;
+    display: flex;
+    align-items: center;
+    flex-flow: row-reverse;
 }
 
 
@@ -107,6 +110,11 @@
 .send_icon{
     color: rgba(0, 31, 139, 1);
     font-size: 2.5rem;
+}
+
+.divider{
+    font-size: 2.6rem;
+    margin: 0rem 1.5rem;
 }
 
 .notesContainer::-webkit-scrollbar {
