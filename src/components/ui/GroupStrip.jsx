@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom'
 
 const GroupStrip = ({id, name, color, initial}) => {
   return (
-    <NavLink to={`/${id}`} className={({isActive})=> isActive ? styles.active : styles.container }>
+    <NavLink to={`/groups/${id}`} className={({isActive})=> isActive ? styles.active : styles.container }>
         <div className={styles.initial} style={{backgroundColor: color}}>
             <p>{initial}</p>
         </div>

@@ -4,8 +4,9 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import './index.css'
 import AppLayout from './components/layout/AppLayout';
 import Home from './components/layout/Home';
-import MainSection from './components/layout/MainSection';
 import { NotesContextProvider } from './contexts/NotesContext';
+import GroupRoute from './components/layout/GroupRoute';
+import ErrorPage from './components/layout/ErrorPage';
 
 const router = createBrowserRouter([
   {
@@ -17,10 +18,14 @@ const router = createBrowserRouter([
         element: <Home/>
       },
       {
-        path: "/:groupId",
-        element: <MainSection/>
-      }
+        path: "/groups/:groupId",
+        element: <GroupRoute/>
+      },
     ]
+  },
+  {
+    path:"*",
+    element: <ErrorPage/>
   }
 ]);
 

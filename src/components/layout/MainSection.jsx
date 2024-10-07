@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import styles from './MainSection.module.css'
 import { IoSendSharp } from "react-icons/io5";
 import useGlobalContext from '../../contexts/NotesContext';
@@ -8,7 +8,13 @@ const MainSection = () => {
   const { groupId } = useParams();
   const {groups, setGroups} = useGlobalContext();
   const [note, setNote] = useState('');
-  const metaData = groups.find(group => group.id === parseInt(groupId));
+  const [metaData, setMetaData] = useState();
+
+  useEffect(() => {
+    setMetaData(groups.find(group => group.id === parseInt(groupId)));  
+    
+  }, [groupId,groups])  
+  
 
   const handleAddNote = (e)=>{
     e.preventDefault();
