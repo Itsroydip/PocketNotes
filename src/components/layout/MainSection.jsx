@@ -2,9 +2,11 @@ import React, {useState, useEffect} from 'react'
 import styles from './MainSection.module.css'
 import { IoSendSharp } from "react-icons/io5";
 import useGlobalContext from '../../contexts/NotesContext';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
+import { FaArrowLeft } from "react-icons/fa";
 
 const MainSection = () => {
+  const navigate = useNavigate();
   const { groupId } = useParams();
   const {groups, setGroups} = useGlobalContext();
   const [note, setNote] = useState('');
@@ -44,6 +46,7 @@ const MainSection = () => {
   return (
     <div className={styles.container}>
       <div className={styles.header}>
+        <FaArrowLeft className={styles.back} onClick={()=>navigate('/')}/>
         <div className={styles.logo} style={{background: metaData?.groupColor}}>
           <p> {metaData?.initial} </p>
         </div>

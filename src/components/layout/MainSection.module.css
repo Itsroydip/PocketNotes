@@ -7,6 +7,12 @@
     height:10vh
 }
 
+.back{
+    font-size: 2.1rem;
+    color: aliceblue;
+    margin-right: 1rem;
+}
+
 .logo{
     height: 3.5rem;
     width: 3.5rem;
@@ -41,7 +47,7 @@
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    height:60vh
+    height:70vh
 }
 
 .note{
@@ -72,7 +78,7 @@
 .footer{
     background-color: rgba(0, 31, 139, 1);
     padding: 1.5rem 2rem;
-    height: 30vh;
+    height: 20vh;
 }
 
 .input_container {
@@ -147,4 +153,10 @@
 }
 .textbox::-webkit-scrollbar-thumb:hover {
     background-color: #ffffffdd; 
+}
+
+@media(min-width:768px) {
+    .back{
+        display: none;
+    }    
 }

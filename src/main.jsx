@@ -7,8 +7,9 @@ import Home from './components/layout/Home';
 import { NotesContextProvider } from './contexts/NotesContext';
 import GroupRoute from './components/layout/GroupRoute';
 import ErrorPage from './components/layout/ErrorPage';
+import Sidebar from './components/layout/Sidebar';
 
-const router = createBrowserRouter([
+const largeScreenRouter = createBrowserRouter([
   {
     path: "/",
     element: <AppLayout/>,
@@ -29,10 +30,33 @@ const router = createBrowserRouter([
   }
 ]);
 
+const smallScreenRouter = createBrowserRouter([
+  {
+    path: "/",
+    element: <Sidebar/>,
+    
+  },
+  {
+    path: "/groups/:groupId",
+    element: <GroupRoute/>
+  },
+  {
+    path:"*",
+    element: <ErrorPage/>
+  }
+]);
+
+const router = ()=>{
+  if(screen.availWidth < 768) 
+  return smallScreenRouter;
+
+  return largeScreenRouter;
+}
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <NotesContextProvider>
-      <RouterProvider router={router} />
+      <RouterProvider router={router()} />
     </NotesContextProvider>
   </StrictMode>,
 )
