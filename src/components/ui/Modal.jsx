@@ -3,7 +3,7 @@ import styles from './Modal.module.css'
 import useGlobalContext from '../../contexts/NotesContext'
 
 const Modal = ({setShowModal}) => {
-    const {groups, addGroups} = useGlobalContext();
+    const {addGroups} = useGlobalContext();
     const [groupName, setGroupName] = useState();
     const [groupColor, setGroupColor] = useState();
     const modalRef = useRef();
@@ -36,6 +36,7 @@ const Modal = ({setShowModal}) => {
             groupColor: groupColor,
             notes: []
         })
+
         
         console.log("Group created successfully!!!");           
     }
