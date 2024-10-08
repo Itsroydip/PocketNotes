@@ -47,3 +47,15 @@
     color: black;
 }
 
+@media(max-width:768px) {
+    .initial{
+        height: 5.5rem;
+        width: 5.5rem;
+        padding: 3rem;
+        font-size: 3rem;
+
+    }
+    .name{
+        font-size: 3rem;
+    }
+}
